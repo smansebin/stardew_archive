@@ -30,3 +30,5 @@ export const fishData = [
         image: "/images/fish/LargemouthBass.png"
     }
 ]
+
+export default fishData

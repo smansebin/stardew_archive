@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('./assets/font/BMDOHYEON_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'BMDOHYEON', sans-serif;
+  color: #2c1d0e;
+}
+
+
+.main-content {
+  padding-top: 72px;
+  min-height: 100vh;
+}

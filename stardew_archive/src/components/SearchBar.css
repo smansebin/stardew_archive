@@ -1,0 +1,31 @@
+.search-bar {
+  position: fixed;
+  top: 62px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #513E08;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 99;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+}
+
+.search-bar__input {
+  width: 300px;
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 14px;
+  background: transparent;
+}
+
+.search-bar__btn {
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}

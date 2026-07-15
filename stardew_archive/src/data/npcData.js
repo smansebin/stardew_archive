@@ -31,3 +31,5 @@ export const npcData = [
         image: "/images/npc/woman/Abigail.png"
     }
 ]
+
+export default npcData

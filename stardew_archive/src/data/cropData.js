@@ -30,3 +30,5 @@ export const cropData = [
         image: "/images/crops/Garlic.png"
     }
 ]
+
+export default cropData
