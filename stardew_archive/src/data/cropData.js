@@ -2,7 +2,7 @@ export const cropData = [
     {
         id: 1,
         name: "가공되지 않은 쌀",
-        image: "/images/crops/Unmilled_rice.png"
+        image: "/images/crops/Unmilled_Rice.png"
     },
     {
         id: 2,

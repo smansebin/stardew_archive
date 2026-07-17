@@ -29,3 +29,15 @@
   cursor: pointer;
   font-size: 20px;
 }
+
+
+@media (max-width: 950px) {
+  .search-bar {
+    width: 500px;
+    top: 120px;
+    left: 16px;
+  }
+  .search-bar__input {
+    width: 500px;
+  }
+}
