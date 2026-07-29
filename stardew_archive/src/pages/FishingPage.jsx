@@ -5,18 +5,18 @@ import './PageCommon.css'
 
 export default function FishingPage() {
   const [showModal, setShowModal] = useState(false)
-  const [selectedFish, setSelectedFish] = useState(null)  
+  const [caughtFish, setCaughtFish] = useState([]) 
 
   return (
     <div className="page">
       <div className="page__grid">
 
-        {selectedFish && (
-          <div className = "fish-card">
-            <img src = {selectedFish.image} alt = {selectedFish.name} />
-            <p>{selectedFish.name}</p>
+        {caughtFish.map((fish) =>(
+          <div className = "fish-card" key={fish.id}>
+            <img src = {fish.image} alt = {fish.name} />
+            <p>{fish.name}</p>
           </div>
-        )}
+        ))}
         <button className="add-card" onClick={() => setShowModal(true)}>
           +
         </button>
@@ -28,7 +28,7 @@ export default function FishingPage() {
           data={fishData}
           onClose={() => setShowModal(false)}
           onSelect = {(item)=> {
-            setSelectedFish(item)
+            setCaughtFish((prev)=>[...prev,item])
             setShowModal(false)
           }}
         />
