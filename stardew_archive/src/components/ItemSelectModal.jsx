@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './ItemSelectModal.css'
 
-export default function ItemSelectModal({ data, onClose }) {
+export default function ItemSelectModal({ data, onClose, onSelect }) {
   const [query, setQuery] = useState('')
 
   const filtered = data.filter((item) =>
@@ -29,7 +29,8 @@ export default function ItemSelectModal({ data, onClose }) {
         <div className="modal__grid">
           {filtered.length > 0 ? (
             filtered.map((item) => (
-              <div key={item.id} className="modal__item">
+              <div key={item.id} className="modal__item"
+                onClick ={ ()=> onSelect(item)}> 
                 <img src={item.image} alt={item.name} draggable={false} />
                 <span>{item.name}</span>
               </div>
