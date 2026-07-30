@@ -1,0 +1,88 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 560px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+.modal__search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal__search-icon {
+  font-size: 20px;
+}
+
+.modal__search {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'BMDOHYEON', sans-serif;
+  font-size: 18px;
+  color: #2c1d0e;
+}
+
+.modal__divider {
+  border: none;
+  border-top: 2px solid #e0d5c0;
+  margin: 12px 0;
+}
+
+.modal__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.modal__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: #e8e4da;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+  font-family: 'BMDOHYEON', sans-serif;
+  font-size: 13px;
+  color: #2c1d0e;
+}
+
+.modal__item:hover {
+  background: #d4c9b0;
+  transform: scale(1.04);
+}
+
+.modal__item img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.modal__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 24px 0;
+  font-family: 'BMDOHYEON', sans-serif;
+}
