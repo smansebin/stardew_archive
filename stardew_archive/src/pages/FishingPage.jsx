@@ -1,3 +1,4 @@
+import { useLocalStorageState } from '../hooks/useLocalStorageState'
 import { useState } from 'react'
 import ItemSelectModal from '../components/ItemSelectModal'
 import { fishData } from '../data/fishData'
@@ -5,7 +6,7 @@ import './PageCommon.css'
 
 export default function FishingPage() {
   const [showModal, setShowModal] = useState(false)
-  const [caughtFish, setCaughtFish] = useState([]) 
+  const [caughtFish, setCaughtFish] = useLocalStorageState('caughtFish', [])
 
   return (
     <div className="page">
