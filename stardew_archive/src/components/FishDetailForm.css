@@ -17,3 +17,54 @@
   padding: 24px;/*박스 안쪽 여백*/
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);/*떠있는 느낌*/
 }
+
+.detail-form__group {
+  border: 1px solid #e0d5c0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.detail-form__group-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #6a5a40;
+}
+
+.detail-form__subsection {
+  margin-bottom: 10px;
+}
+
+.detail-form__subsection label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chip--active {
+  background: #6a9955;
+  border-color: #6a9955;
+  color: white;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
