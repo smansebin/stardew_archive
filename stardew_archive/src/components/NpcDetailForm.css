@@ -1,0 +1,62 @@
+.npc-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.npc-row select,
+.npc-row input {
+  width: auto;
+}
+
+.npc-row__time {
+  width: 110px !important;
+  flex-shrink: 0;
+}
+
+.npc-row__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.npc-row__affection {
+  width: 64px !important;
+  flex-shrink: 0;
+}
+
+.npc-row__thumb {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #e8e4da;
+  flex-shrink: 0;
+}
+
+.npc-row__remove {
+  border: none;
+  background: transparent;
+  color: #d9534f;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+
+.npc-add-row {
+  width: 100%;
+  padding: 8px;
+  border: 1px dashed #c9b98f;
+  border-radius: 8px;
+  background: #faf7ee;
+  color: #6a5a40;
+  cursor: pointer;
+  font-family: 'bmdohyeon', sans-serif;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.npc-add-row:hover {
+  background: #f0e9d4;
+}

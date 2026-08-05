@@ -1,0 +1,35 @@
+.farm-harvest-output {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #f4efe1;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.farm-harvest-note {
+  color: #8a6d3b;
+  font-size: 12px;
+}
+
+.farm-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.farm-tabs__btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid #d9cdb0;
+  background: #fff;
+  font-family: "bmdohyeon", sans-serif;
+  font-size: 14px;
+  color: #6a5a40;
+  cursor: pointer;
+}
+
+.farm-tabs__btn--active {
+  background: #6a9955;
+  border-color: #6a9955;
+  color: #fff;
+}
