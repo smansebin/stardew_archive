@@ -24,6 +24,34 @@ export const forageData = [
         name: "파",
         image: "/images/forage/Spring_Onion.png"
     },
+    {
+        id: 6,
+        name: "곰보버섯",
+        image: "/images/forage/Morel.png"
+    },
+    {
+        id: 7,
+        name: "흔한버섯",
+        image: "/images/forage/Common_Mushroom.png"
+    },
+    {
+        id: 8,
+        name: "새먼베리",
+        image: "/images/forage/Salmonberry.png"
+    },
+    {
+        id: 9,
+        name: "백량금",
+        image: "/images/forage/Spice_Berry.png"
+    },
+    {
+        id: 10,
+        name: "포도",
+        image: "/images/forage/Grape.png"
+    },
+    {
+        
+    }
 ]
 
 export default forageData

@@ -27,7 +27,7 @@ export const fishData = [
     {
         id: 6,
         name: "큰입우럭",
-        image: "/images/fish/LargemouthBass.png"
+        image: "/images/fish/Largemouth_Bass.png"
     },
     {
         id: 7,
