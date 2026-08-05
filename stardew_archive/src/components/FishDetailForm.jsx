@@ -15,7 +15,7 @@ const LOCATIONS = [
   "진저 섬 호수",
 ];
 const BEHAVIORS = ["잔잔한", "가라앉는", "뜨는", "빠른", "혼합"];
-const PROFESSION = ["기본", "어부", "낚시 장인"];
+const PROFESSIONS = ["기본", "어부", "낚시 장인"];
 
 // 실제 스타듀밸리 판매가 비율 (직업 보너스/ 품질 배율)
 const PROFESSION_MULTIPLIER = { 기본: 1, 어부: 1.25, "낚시 장인": 1.5 };
@@ -26,9 +26,14 @@ const QUALITY_OPTIONS = [{ id: 0, name: "보통", image: null }, ...qualityData]
 export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
   const [seasons, setSeasons] = useState(fish.seasons || []);
   const [weathers, setWeathers] = useState(fish.weathers || []);
-  const [locations, setLocations] = useState(fish.locations || []);
   const [timeStart, setTimeStart] = useState(fish.timeStart || "06:00");
   const [timeEnd, setTimeEnd] = useState(fish.timeEnd || "18:00");
+  const [isAnytime, setIsAnytime] = useState(fish.isAnytime ?? false);
+
+  const [locations, setLocations] = useState(fish.locations || []);
+  const [locationDetail, setLocationDetail] = useState(
+    fish.locationDetail || "",
+  );
 
   const [difficulty, setDifficulty] = useState(fish.difficulty ?? 0);
   const [behavior, setBehavior] = useState(fish.behavior || "보통");
@@ -57,7 +62,7 @@ export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
       weathers,
       isAnytime,
       locations,
-      locationDatail,
+      locationDetail,
       timeStart,
       timeEnd,
       difficulty,
@@ -65,7 +70,7 @@ export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
       maxSize,
       profession,
       quality,
-      baseprice,
+      basePrice,
     });
   };
   const isEditing = Boolean(fish.seasons);
@@ -103,29 +108,30 @@ export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
           <div className="detail-form__subsection">
             <label>날씨</label>
             <div className="chip-row">
-            {WEATHERS.map((weather) => (
-              <button
-                key={weather}
-                type="button"
-                className={
-                  weathers.includes(weather) ? "chip chip--active" : "chip"
-                }
-                onClick={() => toggle(weathers, setWeathers, weather)}
-              >
-                {weather}
-              </button>
-            ))}
+              {WEATHERS.map((weather) => (
+                <button
+                  key={weather}
+                  type="button"
+                  className={
+                    weathers.includes(weather) ? "chip chip--active" : "chip"
+                  }
+                  onClick={() => toggle(weathers, setWeathers, weather)}
+                >
+                  {weather}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="detail-form__subsection">
             <label>출현 시간대</label>
             <div className="chip-row">
-            {/* <input
+              {/* <input
               type="time"
               value={timeStart}
               onChange={(e) => setTimeStart(e.target.value)}
             /> */}
-             <button
+              <button
                 type="button"
                 className={!isAnytime ? "chip chip--active" : "chip"}
                 onClick={() => setIsAnytime(false)}
@@ -159,29 +165,29 @@ export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
           </div>
         </div>
 
-         {/* 출현 장소: 장소 선택 / 상세 내용 */}
+        {/* 출현 장소: 장소 선택 / 상세 내용 */}
         <div className=" detail-form__group">
           <h4 className="detail-form__group-title">출현 장소</h4>
 
           <div className="detail-form__subsection">
             <label>장소</label>
             <div className="chip-row">
-            {LOCATIONS.map((location) => (
-              <button
-                key={location}
-                type="button"
-                className={
+              {LOCATIONS.map((location) => (
+                <button
+                  key={location}
+                  type="button"
+                  className={
                     locations.includes(location) ? "chip chip--active" : "chip"
                   }
-                onClick={() => toggle(locations, setLocations, location)}
-              >
-                {location} {locations.includes(location) ? "✓" : ""}
-              </button>
-            ))}
+                  onClick={() => toggle(locations, setLocations, location)}
+                >
+                  {location} {locations.includes(location) ? "✓" : ""}
+                </button>
+              ))}
             </div>
           </div>
-          
-        <div className="detail-form__subsection">
+
+          <div className="detail-form__subsection">
             <label>상세 내용</label>
             <textarea
               value={locationDetail}
@@ -191,42 +197,42 @@ export default function FishDetailForm({ fish, onClose, onSave, onDelete }) {
             />
           </div>
         </div>
-        
+
         {/* 어획 방법 기록: 난이도 / 행동 패턴 / 최대 길이 */}
         <div className="detail-form__group">
           <h4 className="detail-form__group-title">어획 방법</h4>
 
           <div className="detail-form__row">
             <div className="detail-form__subsection">
-                <label>난이도</label>
-                <input
+              <label>난이도</label>
+              <input
                 type="number"
                 value={difficulty}
                 onChange={(e) => setDifficulty(Number(e.target.value))}
-                />
+              />
             </div>
 
             <div className="detail-form__subsection">
-                <label>행동패턴</label>
-                <select
+              <label>행동패턴</label>
+              <select
                 value={behavior}
                 onChange={(e) => setBehavior(e.target.value)}
-                >
+              >
                 {BEHAVIORS.map((b) => (
-                    <option key={b} value={b}>
+                  <option key={b} value={b}>
                     {b}
-                    </option>
+                  </option>
                 ))}
-                </select>
+              </select>
             </div>
 
             <div className="detail-form__subsection">
-                <label>최대길이(cm)</label>
-                <input
+              <label>최대길이(cm)</label>
+              <input
                 type="number"
                 value={maxSize}
                 onChange={(e) => setMaxSize(Number(e.target.value))}
-                />
+              />
             </div>
           </div>
         </div>
