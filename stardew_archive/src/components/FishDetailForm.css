@@ -1,0 +1,174 @@
+.detail-overlay {
+  position: fixed; /*페이지 내려도 배경은 항상 화면에 있음*/
+  inset: 0; /*화면 전체 채우기*/
+  background: rgba(0, 0, 0, 0.45); /*마지막 숫자 투명도*/
+  display: flex; /*정렬 모드-> 아래 두개까지 팝업박스(내용물)를 화면 정중앙에 놓아라*/
+  align-items: center; /*세로 가운데*/
+  justify-content: center; /*가로 가운데*/
+  z-index: 200; /*레이어 정하는 숫자->숫자 높을 수록 더 위에 쌓임*/
+}
+
+.detail-form {
+  /*팝업*/
+  background: #fff;
+  border-radius: 12px; /*모서리 둥글게*/
+  width: 400px; /*박스 가로 폭 고정*/
+  max-height: 70vh; /*세로 높이는 화면 높이의 70%까지만 커지게 제한 -> 내용이 그거보다 많아지면?*/
+  overflow-y: auto; /*넘기면, 세로 스크롤바가 자동으로 생김*/
+  padding: 24px; /*박스 안쪽 여백*/
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /*떠있는 느낌*/
+}
+
+.detail-form__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.detail-form__header h3 {
+  margin: 0;
+}
+
+.detail-form__group {
+  border: 1px solid #e0d5c0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.detail-form__group-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #6a5a40;
+}
+
+.detail-form__subsection {
+  margin-bottom: 10px;
+}
+
+.detail-form__subsection:last-child {
+  margin-bottom: 0;
+}
+
+.detail-form__subsection label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.detail-form__row {
+  display: flex;
+  gap: 10px;
+}
+
+.detail-form__row .detail-form__subsection {
+  flex: 1;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.chip--active {
+  background: #6a9955;
+  border-color: #6a9955;
+  color: white;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.detail-form input,
+.detail-form select,
+.detail-form textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.quality-row {
+  display: flex;
+  gap: 8px;
+}
+
+.quality-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.quality-chip img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.quality-chip--active {
+  background: #6a9955;
+  border-color: #6a9955;
+  color: white;
+}
+
+.detail-form__price-output {
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.detail-form__actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.detail-form__save {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #6a9955;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.detail-form__delete,
+.detail-form__close {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.detail-form__delete {
+  border-color: #d9534f;
+  color: #d9534f;
+}
