@@ -4,7 +4,7 @@
 
 .page__grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -12,20 +12,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6%;
   background: #e8e4da;
   border-radius: 10px;
-  padding: 20px 12px;
+  padding: 12% 8%;
   font-family: 'bmdohyeon', sans-serif;
-  font-size: 14px;
+  font-size: clamp(9px, 1.1vw, 14px);
   color: #2c1d0e;
   aspect-ratio: 1 / 1;
   justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .item-card img {
-  width: 80px;
-  height: 80px;
+  width: 65%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
 }
 
@@ -36,12 +39,12 @@
   background: #EBAB73;
   border: none;
   border-radius: 10px;
-  font-size: 50px;
+  font-size: clamp(20px, 4vw, 50px);
   color: #fff;
   cursor: pointer;
   aspect-ratio: 1 / 1;
   transition: background 0.15s, transform 0.15s;
-  font-family: 'bmdohyeon', sans-serif;
+  box-sizing: border-box;
 }
 
 .add-card:hover {
