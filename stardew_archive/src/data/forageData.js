@@ -68,7 +68,7 @@ export const forageData = [
     {
         id: 14,
         name: "야생 자두",
-        image: "/images/forage/Wild_Plums.png"
+        image: "/images/forage/Wild_Plum.png"
     },
     {
         id: 15,
